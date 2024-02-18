@@ -1,0 +1,17 @@
+version: '3.9'
+
+networks:
+  cf_macvlan:
+    external: true
+
+services:
+  cloudflaretunnel:
+    container_name: cftunnel
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=$TUNNEL_TOKEN        # Replace Tunnel_Token here or add it as environment variable
+    command: tunnel --no-autoupdate run
+    networks:
+      cf_macvlan:
+        ipv4_address: 10.0.35.2
