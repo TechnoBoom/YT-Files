@@ -1,0 +1,11 @@
+// Notes for macvlan command
+
+docker network create -d macvlan \
+  --subnet=10.0.35.0/24 \                //Change subnet ip address to yours
+  --gateway=10.0.35.1 \                  //Change gateway ip address
+  -o parent=enp6s18.35 \                 //Change parent ethernet interface name and vlan id (.35)
+  cf_macvlan                             //name of docker network
+
+// Notes for Proxmox VM command
+
+qm set 104 -net0 "virtio=00:11:22:33:34:9A,bridge=vmbr0,trunks=35,tag=40,firewall=1"        //Change 104 to your vm id, change mac address to yours for ip configuration,change vlan id's in both tag nad trunk. Tag id is for general traffic nad trunk id is for macvlan use. 
