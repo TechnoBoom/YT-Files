@@ -1,1 +1,1 @@
-qm set 104 -net0 "virtio=92:E8:D5:DD:34:9A,bridge=vmbr0,trunks=35,tag=40,firewall=1"
+qm set 104 -net0 "virtio=00:11:22:33:34:9A,bridge=vmbr0,trunks=35,tag=40,firewall=1"
