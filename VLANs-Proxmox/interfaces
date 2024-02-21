@@ -1,0 +1,24 @@
+# Sample Interfaces File
+
+auto lo
+iface lo inet loopback
+
+iface enp1s0 inet manual                                                #Physical Interface 1
+
+iface enx000e098762ff inet manual                                       #Physical Interface 2
+
+auto enxc84d4433a983                                                    #Physical Interface 3
+iface enxc84d4433a983 inet manual
+
+auto vmbr0                                                              #Linux Bridge (VLAN Aware)
+iface vmbr0 inet manual
+        bridge-ports enp1s0 enx000e098762ff enxc84d4433a983             #Change Physical Interfaces here
+        bridge-stp off
+        bridge-fd 0
+        bridge-vlan-aware yes                                           #VLAN Aware - yes
+        bridge-vids 2-4094                                              #VLAN Pass Through Ports List
+
+auto vmbr0.20                                                           # Management Web Interface VLAN Configuration
+iface vmbr0.20 inet static                                              # IP Configuration
+        address 10.0.20.21/24                                           # IP Address of Proxmox Web Interface
+        gateway 10.0.20.1                                               # Gateway (Router's IP Address)
