@@ -1,5 +1,5 @@
 docker network create -d macvlan \
-  --subnet=10.0.35.0/24 \                
-  --gateway=10.0.35.1 \                  
-  -o parent=enp6s18.35 \                 
+  --subnet=10.0.35.0/24 \  
+  --gateway=10.0.35.1 \                
+  -o parent=enp6s18.35 \
   cf_macvlan                             
