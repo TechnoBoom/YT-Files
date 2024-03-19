@@ -1,0 +1,16 @@
+version: '3.9'
+
+networks:
+  local:
+    external: true
+
+services:
+  cloudflaretunnel:
+    container_name: cftunnel_test
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    environment:
+      - TUNNEL_TOKEN=$TUNNEL_TOKEN        # Replace Tunnel_Token here or add it as environment variable
+    command: tunnel --no-autoupdate run
+    networks:
+      - local
