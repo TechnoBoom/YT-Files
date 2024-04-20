@@ -24,7 +24,7 @@ services:
       CROWDSEC_BOUNCER_API_KEY: some-api-key                                  # Generate API key, One-Time generateable only.Keep safe!
       CROWDSEC_AGENT_HOST: crowdsec:8080
     networks:
-	    - crowd1                  											                        # internal crowdsec network
+      - crowd1                  	                                      # internal crowdsec network
       - crowd2                                                                # same network for traefik + crowdsec
     depends_on:
       - crowdsec
