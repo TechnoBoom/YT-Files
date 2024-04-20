@@ -38,3 +38,4 @@ volumes:
   crowdsec-db:
   crowdsec-config:
   traefik_logs1:                                                              # docker vol for traefik logs (traefik_ is the name of traefik stack)
+	external: true
