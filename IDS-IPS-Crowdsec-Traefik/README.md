@@ -53,5 +53,5 @@ Crontab :
 
 26. crontab -e                                                                         # select 1 for nano
 27. go to the  last line and paste the below command and save it.
-28. * 3 * * * docker exec crowdsec cscli hub update && docker exec crowdsec cscli hub upgrade
+28. " * 3 * * * docker exec crowdsec cscli hub update && docker exec crowdsec cscli hub upgrade "          #Inside Quotes
 29. This command will update the blocklist every 3 hours.
