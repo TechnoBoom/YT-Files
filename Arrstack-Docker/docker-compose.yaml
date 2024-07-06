@@ -120,8 +120,8 @@ services:
     image: fallenbagel/jellyseerr:latest
     container_name: jellyseerr
     environment:
-            - LOG_LEVEL=debug
-            - TZ=Etc/UTC
+      - LOG_LEVEL=debug
+      - TZ=Etc/UTC
     volumes:
       - /docker/arrstack/jellyseerr/appdata/config:/app/config                                                      # Config File location
     restart: unless-stopped
