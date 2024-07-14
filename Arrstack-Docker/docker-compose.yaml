@@ -11,7 +11,7 @@ services:
     mem_reservation: 64m
     cpus: 0.5
     volumes:
-      - /docker/arrstack/radarr:/config                                                                 # Config File location
+      - /docker/arrstack/radarr/config:/config                                                                 # Config File location
       - /mnt/nas/radarr:/movies                                                                         # Movies Download location
       - /mnt/nas/qbit/downloads:/downloads                                                              # Downloads Location of QBit client
     networks:
