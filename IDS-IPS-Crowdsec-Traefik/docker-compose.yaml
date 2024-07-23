@@ -5,7 +5,7 @@ services:
     container_name: crowdsec
     environment:
       GID: "${GID-1000}"                                                      # Defining user file permissions
-      COLLECTIONS: "crowdsecurity/linux crowdsecurity/traefik"
+      COLLECTIONS: "crowdsecurity/linux crowdsecurity/traefik crowdsecurity/appsec-virtual-patching crowdsecurity/appsec-generic-rules"
     # depends_on:                                                             # uncomment if running traefik in the same compose file
     #   - 'traefik'
     volumes:
