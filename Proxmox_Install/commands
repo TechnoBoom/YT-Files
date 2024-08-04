@@ -1,0 +1,30 @@
+# BIOS Setup
+
+Virtualization (VT-x) = on
+Secure Boot = off
+Boot Options/Priority = USB (at top)
+
+# Proxmox Setup commands
+# setup IOMMU and PCIe Passthrough
+
+nano /etc/default/grub
+GRUB_CMDLINE_DEFAULT_LINUX= quiet intel_iommu=on iommu=pt              # for Intel Systems
+
+  or
+
+GRUB_CMDLINE_DEFAULT_LINUX= quiet iommu=pt                             # for AMD Systems
+update-grub
+
+nano /etc/modules
+
+vfio
+vfio_iommu_type1
+vfio_pci
+vfio_virqfd #not needed if on kernel 6.2 or newer
+
+update-initramfs -u -k all
+
+# Check IOMMU if working
+
+lsmod | grep vfio
+dmesg | grep -e DMAR -e IOMMU -e AMD-Vi
