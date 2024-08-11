@@ -21,7 +21,7 @@ services:
       - ./data/traefik.yml:/traefik.yml:ro               # Change File Locations if needed
       - ./data/acme.json:/acme.json                      # Change File Locations if needed, also "chmod 600 acme.json"
       - ./data/config.yml:/config.yml:ro                 # Change File Locations if needed
-      - logs1:/var/log/traefik                                                                                                       # CHANGE MADE HERE (LOGS STORAGE LOCATION) !!!
+      - traefik_logs1:/var/log/traefik                                                                                                       # CHANGE MADE HERE (LOGS STORAGE LOCATION) !!!
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.traefik.entrypoints=http"
@@ -45,4 +45,4 @@ networks:
   crowd1:                                                                                                                             # CHANGE MADE HERE (CROWDSEC NETWORK CREATED crowd2) !!!
 
 volumes:
-  logs1:                                                                                                                              # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
+  traefik_logs1:                                                                                                                      # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
