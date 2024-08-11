@@ -14,19 +14,19 @@ The example configs given are final sample configs created and lack the step-by-
 
 1. mkdir crowdsec && cd crowdsec && mkdir config && cd config
 2. sudo nano acquis.yaml
-3. copy and paste contents of [acquis.yaml](https://github.com/TechnoBoom/YT-Files/blob/9134dae38321b4c76d54bd6b1c5c1c38ffd44868/IDS-IPS-Crowdsec-Traefik/config/acquis.yaml) and save the file.
+3. copy and paste contents of [acquis.yaml](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/crowdsec/config/acquis.yaml) and save the file.
 4. cd ..
 5. sudo nano docker-compose.yaml
-6. copy and paste crowdsec's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/1060389ac23875ffcf6e80c37a9dc9f42069996a/IDS-IPS-Crowdsec-Traefik/docker-compose.yaml) file's contents here and save the file.
+6. copy and paste crowdsec's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/crowdsec/docker-compose.yaml) file's contents here and save the file.
 
 Traefik :
 
 8. cd .. && cd traefik && cd data
 9. sudo nano traefik.yml
-10. copy and paste lines for logs (lines 39 - 43) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/9134dae38321b4c76d54bd6b1c5c1c38ffd44868/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L39) and save it.
+10. copy and paste lines for logs (lines 41 - 45) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L41) and save it.
 11. cd ..
 12. sudo nano docker-compose.yml
-13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/9134dae38321b4c76d54bd6b1c5c1c38ffd44868/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
+13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
 14. sudo docker-compose down && sudo docker-compose up -d --force-recreate
 15. cd .. && cd crowdsec
 16. sudo docker-compose down && sudo docker-compose up -d --force-recreate
