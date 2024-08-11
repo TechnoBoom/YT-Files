@@ -23,7 +23,7 @@ Traefik :
 
 8. cd .. && cd traefik && cd data
 9. sudo nano traefik.yml
-10. copy and paste lines for logs (lines 41 - 45) and plugins (lines 48 - 56) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L41) and save it.
+10. copy and paste lines for logs (lines 41 - 45) and plugins (lines 48 - 56) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/4bf2948c4634f849d961aa3831207157ce56735d/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L41) and save it.
 11. cd ..
 12. sudo nano docker-compose.yml
 13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
@@ -43,7 +43,7 @@ Traefik :
 21. copy and paste CrowdSec's Bouncer Plugin from lines (42 - 68) and  Cloudflare IP Fix (lines 70 - 75) from [config.yml](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L42) to the traefik's config.yml and save it.
 22. replace Crowdsec's LAPI key from step 18 [here](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L56)
 23. sudo nano traefik.yml
-24. copy and paste middleware enabler in lines (7 - 14) and lines (17 - 20) to both http and https sections like shown in [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L7) and save the file.
+24. copy and paste middleware enabler in lines (7 - 14) and lines (17 - 20) to both http and https sections like shown in [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/4bf2948c4634f849d961aa3831207157ce56735d/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L7) and save the file.
 25. sudo docker-compose down && sudo docker-compose up -d --force-recreate
 
 Crowdsec :
