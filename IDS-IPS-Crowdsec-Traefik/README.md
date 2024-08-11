@@ -23,7 +23,7 @@ Traefik :
 
 8. cd .. && cd traefik && cd data
 9. sudo nano traefik.yml
-10. copy and paste lines for logs (lines 41 - 45) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L41) and save it.
+10. copy and paste lines for logs (lines 41 - 45) and plugins (lines 48 - 56) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L41) and save it.
 11. cd ..
 12. sudo nano docker-compose.yml
 13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
@@ -33,25 +33,26 @@ Traefik :
 
 CrowdSec :
 
-17. docker exec crowdsec cscli decisions list                                          #Check if access.log is listed at top or not
-18. docker exec crowdsec cscli bouncers add bouncer-traefik                            #Add API key into bouncer's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/1060389ac23875ffcf6e80c37a9dc9f42069996a/IDS-IPS-Crowdsec-Traefik/docker-compose.yaml#L24) here.
+17. docker exec crowdsec cscli decisions list                                          # Check if access.log is listed at top or not
+18. docker exec crowdsec cscli bouncers add crowdsecBouncer                            # Add API key into bouncer's [config.yml](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L56) here after step 21.
 
 Traefik :
 
 19. cd .. && cd traefik && cd data
 20. sudo nano config.yml
-21. copy and paste CrowdSec's Bouncer MiddleWare from lines (42 - 45) from [config.yml](https://github.com/TechnoBoom/YT-Files/blob/9134dae38321b4c76d54bd6b1c5c1c38ffd44868/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L42) to the traefik's config.yml and save it.
-22. sudo nano traefik.yml
-23. copy and paste middleware enabler in lines (16 - 18) to both http and https sections like shown in [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/9134dae38321b4c76d54bd6b1c5c1c38ffd44868/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L16) and save the file.
-24. sudo docker-compose down && sudo docker-compose up -d --force-recreate
+21. copy and paste CrowdSec's Bouncer Plugin from lines (42 - 68) and  Cloudflare IP Fix (lines 70 - 75) from [config.yml](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L42) to the traefik's config.yml and save it.
+22. replace Crowdsec's LAPI key from step 18 [here](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L56)
+23. sudo nano traefik.yml
+24. copy and paste middleware enabler in lines (7 - 14) and lines (17 - 20) to both http and https sections like shown in [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L7) and save the file.
+25. sudo docker-compose down && sudo docker-compose up -d --force-recreate
 
 Crowdsec :
 
-25. To verify if CrowdSec is working, run [commands](https://github.com/TechnoBoom/YT-Files/blob/9134dae38321b4c76d54bd6b1c5c1c38ffd44868/IDS-IPS-Crowdsec-Traefik/commands%20list#L12) and and or delete your ip address. You can also check decisions list.
+25. To verify if CrowdSec is working, run [commands](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/commands%20list#L12) and and or delete your ip address. You can also check decisions list.
 
 Crontab :
 
 26. crontab -e                                                                         # select 1 for nano
 27. go to the  last line and paste the below command and save it.
-28. " * 3 * * * docker exec crowdsec cscli hub update && docker exec crowdsec cscli hub upgrade "          #Inside Quotes
+28. " * 3 * * * docker exec crowdsec cscli hub update && docker exec crowdsec cscli hub upgrade "          # only Inside Quotes data
 29. This command will update the blocklist every 3 hours.
