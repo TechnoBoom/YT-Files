@@ -17,7 +17,7 @@ The example configs given are final sample configs created and lack the step-by-
 3. copy and paste contents of [acquis.yaml](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/crowdsec/config/acquis.yaml) and save the file.
 4. cd ..
 5. sudo nano docker-compose.yaml
-6. copy and paste crowdsec's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/19201be2fd8b99d0388a587b1b648b23ac07b7b0/IDS-IPS-Crowdsec-Traefik/crowdsec/docker-compose.yaml) file's contents here and save the file.
+6. copy and paste crowdsec's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/4518d6f39a551de0c1390b9d17ee1767b345851f/IDS-IPS-Crowdsec-Traefik/crowdsec/docker-compose.yaml) file's contents here and save the file.
 
 Traefik :
 
