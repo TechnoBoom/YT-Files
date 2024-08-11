@@ -1,7 +1,7 @@
 Commands List for CrowdSec :
 
 
-docker exec crowdsec cscli bouncers add bouncer-traefik                                                       # For API key Generation
+docker exec crowdsec cscli bouncers add crowdsecBouncer                                                       # Generate API key, One-Time generateable only.Keep safe!
 
 docker exec crowdsec cscli metrics                                                                            # For Metrics and log read checking
 
