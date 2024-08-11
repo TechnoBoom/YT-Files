@@ -7,7 +7,7 @@ entryPoints:
     http:                                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
       middlewares:                                                                   # CHANGE MADE HERE (BOUNCER ENABLED) !!!
         - "crowdsec@file"                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
-#        - "cloudflarewarp@file"                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+        - "cloudflarewarp@file"                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
       redirections:
         entryPoint:
           to: https
@@ -17,7 +17,7 @@ entryPoints:
     http:                                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
       middlewares:                                                                   # CHANGE MADE HERE (BOUNCER ENABLED) !!!
         - "crowdsec@file"                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
-#        - "cloudflarewarp@file"                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+        - "cloudflarewarp@file"                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
 serversTransport:
   insecureSkipVerify: true
 providers:
