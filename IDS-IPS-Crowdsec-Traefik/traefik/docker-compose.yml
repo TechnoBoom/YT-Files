@@ -42,7 +42,7 @@ services:
 networks:
   proxy:                                                   # Proxy Network
     external: true
-  crowd2:                                                                                                                             # CHANGE MADE HERE (CROWDSEC NETWORK CREATED crowd2) !!!
+  crowd1:                                                                                                                             # CHANGE MADE HERE (CROWDSEC NETWORK CREATED crowd2) !!!
 
 volumes:
   logs1:                                                                                                                              # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
