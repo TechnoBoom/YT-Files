@@ -7,11 +7,12 @@ services:
     restart: unless-stopped
     networks:
       - proxy                                            # Proxy Network
+      - crowd1
     ports:
       - 80:80
       - 443:443
     environment:
-      - CF_DNS_API_TOKEN=####CHANGE_API_TOKEN#####       # CHange API_TOKEN
+      - CF_DNS_API_TOKEN=####CHANGE_API_TOKEN#####       # Change API_TOKEN
       # If you choose to use an API Key instead of a Token, specify your email as well
       # - CF_API_EMAIL=user@example.com
       # - CF_API_KEY=YOUR_API_KEY
@@ -42,7 +43,7 @@ services:
 networks:
   proxy:                                                   # Proxy Network
     external: true
-  crowd1:                                                                                                                             # CHANGE MADE HERE (CROWDSEC NETWORK CREATED crowd2) !!!
+  crowd1:                                                                                                                                     # CHANGE MADE HERE (CROWDSEC NETWORK CREATED crowd1) !!!
 
-volumes:
-  traefik_logs1:                                                                                                                      # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
+volumes:                                                                                                                                      # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
+  traefik_logs1:                                                                                                                              # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
