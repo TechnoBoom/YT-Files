@@ -17,7 +17,7 @@ http:
     proxmox:
       loadBalancer:
         servers:
-          - url: "https://10.0.20.20:8006"            # Change IP Address to your proxmox instance
+          - url: "https://10.20.20.20:8006"            # Change IP Address to your proxmox instance
         passHostHeader: true
 
   middlewares:
