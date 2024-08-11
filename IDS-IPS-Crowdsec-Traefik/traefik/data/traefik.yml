@@ -5,17 +5,19 @@ entryPoints:
   http:
     address: ":80"
     http:                                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+      middlewares:                                                                   # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+        - "crowdsec@file"                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+#        - "cloudflarewarp@file"                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
       redirections:
         entryPoint:
           to: https
           scheme: https
-      middlewares:                                                                   # CHANGE MADE HERE (BOUNCER ENABLED) !!!
-        - crowdsec-bouncer@file                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
   https:
     address: ":443"
     http:                                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
       middlewares:                                                                   # CHANGE MADE HERE (BOUNCER ENABLED) !!!
-        - crowdsec-bouncer@file                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+        - "crowdsec@file"                                                            # CHANGE MADE HERE (BOUNCER ENABLED) !!!
+#        - "cloudflarewarp@file"                                                      # CHANGE MADE HERE (BOUNCER ENABLED) !!!
 serversTransport:
   insecureSkipVerify: true
 providers:
@@ -36,8 +38,8 @@ certificatesResolvers:
           - "1.1.1.1:53"
           - "1.0.0.1:53"
 
-log:                                                                                  # CHANGE MADE HERE (LOGS STORAAGE ENABLED) !!!
-  level: "INFO"                                                                       # CHANGE MADE HERE (LOGS STORAAGE ENABLED) !!!
-  filePath: "/var/log/traefik/traefik.log"                                            # CHANGE MADE HERE (LOGS STORAAGE ENABLED) !!!
-accessLog:                                                                            # CHANGE MADE HERE (LOGS STORAAGE ENABLED) !!!
-  filePath: "/var/log/traefik/access.log"                                             # CHANGE MADE HERE (LOGS STORAAGE ENABLED) !!!
+log:                                                                                  # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
+  level: "INFO"                                                                       # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
+  filePath: "/var/log/traefik/traefik.log"                                            # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
+accessLog:                                                                            # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
+  filePath: "/var/log/traefik/access.log"                                             # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
