@@ -14,25 +14,12 @@ services:
       - crowdsec-config:/etc/crowdsec/
       - traefik_logs1:/var/log/traefik/:ro                                    # docker vol for traefik logs, keep ro only for logs, (traefik_ is the name of traefik stack)
     networks:
-      - crowd1                                                                # internal crowdsec network
+      - crowd1                                                                # internal crowdsec + traefik network
     restart: unless-stopped
 
-  bouncer-traefik:                                                            # Bouncer, Takes action on crowdsec commands
-    image: docker.io/fbonalair/traefik-crowdsec-bouncer:latest
-    container_name: bouncer-traefik
-    environment:
-      CROWDSEC_BOUNCER_API_KEY: some-api-key                                  # Generate API key, One-Time generateable only.Keep safe!
-      CROWDSEC_AGENT_HOST: crowdsec:8080
-    networks:
-      - crowd1                  	                                      # internal crowdsec network
-      - crowd2                                                                # same network for traefik + crowdsec
-    depends_on:
-      - crowdsec
-    restart: unless-stopped
 networks:
   crowd1:
-  crowd2:
-	external: true
+    external: true
 
 volumes:
   crowdsec-db:
