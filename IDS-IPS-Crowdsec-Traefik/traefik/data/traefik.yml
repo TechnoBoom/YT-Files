@@ -43,3 +43,14 @@ log:                                                                            
   filePath: "/var/log/traefik/traefik.log"                                            # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
 accessLog:                                                                            # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
   filePath: "/var/log/traefik/access.log"                                             # CHANGE MADE HERE (LOGS STORAGE ENABLED) !!!
+
+
+experimental:                                                                         # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+  plugins:                                                                            # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+    cloudflarewarp:                                                                   # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+      modulename: github.com/BetterCorp/cloudflarewarp                                # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+      version: v1.3.3                                                                 # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+      
+    bouncer:                                                                          # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+      moduleName: github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin             # CHANGE MADE HERE (PLUGINS ENABLED) !!!
+      version: v1.3.3                                                                 # CHANGE MADE HERE (PLUGINS ENABLED) !!!
