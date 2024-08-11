@@ -66,6 +66,13 @@ http:
             - 10.20.20.0/24                                                              # Internal LAN IP addresses
             - 10.20.25.0/24                                                              # Internal LAN IP addresses
 #          forwardedHeadersCustomName: CF-Connecting-IP                                 # Cloudflare IP address header
+
+    cloudflarewarp:                                                                      # For Cloudflare real IP
+      plugin:                                                                            # For Cloudflare real IP
+        cloudflarewarp:                                                                  # For Cloudflare real IP
+          disableDefault: false                                                          # For Cloudflare real IP
+          trustip:                                                                       # For Cloudflare real IP
+            - "2400:cb00::/32"                                                           # For Cloudflare real IP
     
     default-whitelist:
       ipWhiteList:
