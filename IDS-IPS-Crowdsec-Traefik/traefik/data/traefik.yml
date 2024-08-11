@@ -50,7 +50,7 @@ experimental:                                                                   
     cloudflarewarp:                                                                   # CHANGE MADE HERE (PLUGINS ENABLED) !!!
       modulename: github.com/BetterCorp/cloudflarewarp                                # CHANGE MADE HERE (PLUGINS ENABLED) !!!
       version: v1.3.3                                                                 # CHANGE MADE HERE (PLUGINS ENABLED) !!!
-      
+
     bouncer:                                                                          # CHANGE MADE HERE (PLUGINS ENABLED) !!!
       moduleName: github.com/maxlerebourg/crowdsec-bouncer-traefik-plugin             # CHANGE MADE HERE (PLUGINS ENABLED) !!!
       version: v1.3.3                                                                 # CHANGE MADE HERE (PLUGINS ENABLED) !!!
