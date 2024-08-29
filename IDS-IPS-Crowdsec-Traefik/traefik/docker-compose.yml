@@ -44,6 +44,7 @@ networks:
   proxy:                                                   # Proxy Network
     external: true
   crowd1:                                                                                                                                     # CHANGE MADE HERE (CROWDSEC NETWORK CREATED crowd1) !!!
+    name: crowd1
 
 volumes:                                                                                                                                      # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
   traefik_logs1:                                                                                                                              # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
