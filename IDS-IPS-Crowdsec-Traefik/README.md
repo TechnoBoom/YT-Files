@@ -27,9 +27,9 @@ Traefik :
 11. cd ..
 12. sudo nano docker-compose.yml
 13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/5e48ac91c60771a114e977536c3589cd8e5f9756/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
-14. sudo docker-compose down && sudo docker-compose up -d --force-recreate
+14. sudo docker compose down && sudo docker compose up -d --force-recreate
 15. cd .. && cd crowdsec
-16. sudo docker-compose down && sudo docker-compose up -d --force-recreate
+16. sudo docker compose down && sudo docker compose up -d --force-recreate
 
 CrowdSec :
 
