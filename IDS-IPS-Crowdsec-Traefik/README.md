@@ -26,7 +26,7 @@ Traefik :
 10. copy and paste lines for logs (lines 41 - 45) and plugins (lines 48 - 56) from [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/4bf2948c4634f849d961aa3831207157ce56735d/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L41) and save it.
 11. cd ..
 12. sudo nano docker-compose.yml
-13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/5e48ac91c60771a114e977536c3589cd8e5f9756/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
+13. copy and paste contents of traefik's [docker-compose](https://github.com/TechnoBoom/YT-Files/blob/9ea110a51da36564fabd93d1acadc7a7291db2ea/IDS-IPS-Crowdsec-Traefik/traefik/docker-compose.yml) and save the file.
 14. sudo docker compose down && sudo docker compose up -d --force-recreate
 15. cd .. && cd crowdsec
 16. sudo docker compose down && sudo docker compose up -d --force-recreate
