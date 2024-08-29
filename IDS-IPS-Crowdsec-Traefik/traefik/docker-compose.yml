@@ -48,3 +48,4 @@ networks:
 
 volumes:                                                                                                                                      # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
   traefik_logs1:                                                                                                                              # CHANGE MADE HERE (LOGS VOLUME CREATED) !!!
+    name: traefik_logs1
