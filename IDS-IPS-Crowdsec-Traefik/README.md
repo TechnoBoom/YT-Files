@@ -61,8 +61,10 @@ Notes :
 
 If using reverse proxy, cloudflare tunnel, then add 
 
- forwardedHeaders:
+ forwardedHeaders: 
+ 
       trustedIPs:
+      
         - IP_ADDRESS_CLOUDFLARE_TUNNEL
 
 to the traefik.yml file after address ":80" and address ":443"
