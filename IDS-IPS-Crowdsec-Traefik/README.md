@@ -44,7 +44,7 @@ Traefik :
 22. replace Crowdsec's LAPI key from step 18 [here](https://github.com/TechnoBoom/YT-Files/blob/0f558d8868d9d447664fd520ccd151f6a55bfca3/IDS-IPS-Crowdsec-Traefik/traefik/data/config.yml#L56)
 23. sudo nano traefik.yml
 24. copy and paste middleware enabler in lines (7 - 14) and lines (17 - 20) to both http and https sections like shown in [traefik.yml](https://github.com/TechnoBoom/YT-Files/blob/4bf2948c4634f849d961aa3831207157ce56735d/IDS-IPS-Crowdsec-Traefik/traefik/data/traefik.yml#L7) and save the file.
-25. sudo docker-compose down && sudo docker-compose up -d --force-recreate
+25. sudo docker compose down && sudo docker compose up -d --force-recreate
 
 Crowdsec :
 
