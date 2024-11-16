@@ -1,0 +1,21 @@
+#Change the following line :
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt”
+To
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi,i915"                                                                    #for normal motherboard (no PCI-E ACS Override)
+            Or
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu,snd_hda_intel,snd_hda_codec_hdmi,i915"                         #if separate iommu groups are required
+
+#to look something like this.
+
+  
+#Also change intel_iommu to amd_iommu if using an amd system
+
+
+This will be different for configurations like Intel iGPU GVT-g sharing or nvidia vGPU. We will not be discussing about nvidia’s gpu for multiple vm’s in this video as it is a longer topic.
+
+For the intel iGPU split passthrough (Intel GVT-g) for intel 5th gen to 10th gen, you may use the following config :
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt i915.enable_gvt=1 i915.enable_guc=0 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"                                                                      #for normal motherboard (no PCI-E ACS Override)
+            Or
+GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on iommu=pt pcie_acs_override=downstream,multifunction i915.enable_gvt=1 i915.enable_guc=0 modprobe.blacklist=radeon,nouveau,nvidia,nvidiafb,nvidia-gpu"                           #for pcie acs override
