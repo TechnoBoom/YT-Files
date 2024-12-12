@@ -4,7 +4,7 @@ services:
     container_name: zitadel
     networks:
       - 'zitadel-int'
-      - 'zitadel-ext' 
+      - 'zitadel-ext'
     image: 'ghcr.io/zitadel/zitadel:latest'
     command: 'start-from-init --masterkey "${MASTERKEY_32}" --tlsMode external'          #Replace Master Key (tr -dc A-Za-z0-9 </dev/urandom | head -c 32)
     env_file: .env
@@ -22,7 +22,7 @@ services:
       ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORD: ${ZITADEL_LOGIN_PASSWORD}
       ZITADEL_FIRSTINSTANCE_ORG_HUMAN_PASSWORDCHANGEREQUIRED: false
       ZITADEL_FIRSTINSTANCE_ORG_NAME: HomeLab
-      
+
       ZITADEL_PORT: 8080                                                                   #For External TLS (Also use h2c)
       ZITADEL_EXTERNALPORT: 443
       ZITADEL_EXTERNALDOMAIN: ${ZITADEL_SUBDOMAIN}.${DOMAIN_NAME}                          #eg. auth.DOMAIN_NAME
@@ -66,5 +66,7 @@ services:
 
 networks:
   zitadel-int:
+    name: zitadel-int
   zitadel-ext:
     external: true
+    name: zitadel-ext
