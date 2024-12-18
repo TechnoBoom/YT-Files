@@ -1,0 +1,21 @@
+# List of commands
+
+tr -dc A-Za-z0-9 </dev/urandom | head -c 32                                      #Replace Master Key
+
+
+sudo chown 1000:1000 .env                                                        #Secure .env file (change ownership)
+
+sudo chmod 600 .env                                                              #Secure .env file (set r/w permissions)
+
+
+sudo docker network create zitadel_ext                                           #Create docker network for zitadel
+
+# For Database
+
+sudo chown 999:999 /docker/zitadel/zitadel-db                                   #Fix database permissions (change ownership)
+
+sudo chmod 700 /docker/zitadel/zitadel-db                                       #Fix database permissions (set r/w/x permissions)
+
+
+
+
